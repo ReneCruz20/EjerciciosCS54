@@ -1,79 +1,128 @@
-/* Aplica estilo general al cuerpo del documento */
+/* Estilos generales */
 body {
-    background-image: linear-gradient(to right, #0f0f0f, #16171a, #1a1f24, #1d282c, #1f3133, #1d3d3d, #1d4a43, #225647, #206950, #217c56, #29905a, #37a35c);
-    /* Fondo con degradado horizontal de colores oscuros a verdes */
-    
-    color: #f0f0f0;
-    /* Color del texto general: claro para contraste con fondo oscuro */
-    
-    font-family: 'Segoe UI';
-    /* Fuente principal del cuerpo del texto */
-    
-    padding: 20px;
-    /* Espacio interno alrededor del contenido */
-    
-    line-height: 1.6;
-    /* Altura de línea: mejora la legibilidad del texto */
-    
-    max-width: 800px;
-    /* Limita el ancho del contenido para que no se vea muy extendido en pantallas grandes */
-    
-    margin: auto;
-    /* Centra el contenido horizontalmente */
+    font-family: 'Fredericka the Great', cursive;
+    background: linear-gradient(to right, #f2f2f2, #e6e6e6);
+    margin: 0;
+    padding: 0;
+    color: #333;
 }
 
-/* Estilo específico para el título principal (h1) */
+h1, h2 {
+    text-align: center;
+    color: #2c3e50;
+}
+
 h1 {
-    font-family: 'Roboto';
-    /* Fuente diferente solo para el título h1 */
-    
-    color: #f0f0f0;
-    /* Color claro para destacar el título sobre fondo oscuro */
+    font-family: 'Black Ops One', cursive;
+    font-size: 3rem;
+    margin-top: 20px;
 }
 
-/* Estilo combinado para h1 y h2 (sobrescribe el anterior para h1) */
-
-
-/* Estilo específico para h2 */
-h2 {
-    font-family: 'Roboto';
-    /* Fuente para los subtítulos */
-    
-    color: #15f800;
-    /* Color verde llamativo para destacar los subtítulos */
-}
-
-/* Estilo para los elementos de lista ordenada y no ordenada */
-ol li,
-ul li {
-    font-family: 'Roboto';
-    /* Aplica la fuente Roboto a los ítems de lista */
-    
-    font-size: 20px;
-    /* Aumenta el tamaño de letra de las listas para mejor legibilidad */
-    
-    color: #f0f0f0;
-    /* Color blanco para el texto de las listas */
-}
-
-/* Estilo general para listas ordenadas y no ordenadas */
-ul,
-ol {
-    margin-bottom: 20px;
-    /* Espacio inferior entre listas y el contenido siguiente */
-}
-
-/* Estilo general para imágenes */
 img {
-    max-width: 200px;
-    /* Limita el ancho máximo de la imagen a 200px para que no sea muy grande */
-    
-    border-radius: 10px;
-    /* Bordes redondeados para que se vea más estética */
-    
     display: block;
-    /* Convierte la imagen en un bloque para evitar que el texto se acomode a su lado */
-    
-    margin: 10px 0;
-    /* Espacio arriba y abajo de la imagen */
+    margin: 20px auto;
+    max-width: 200px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    animation: fadeInUp 1s ease-out;
+}
+
+/* Estilo para la tarjeta de "Acerca de mí" */
+.tarjeta-acercademi {
+    max-width: 800px;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    line-height: 1.6;
+    animation: fadeInUp 1s ease-out;
+}
+
+/* Navegación */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    background-color: #2c3e50;
+    margin: 50px auto;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+    display: block;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #34495e;
+    border-radius: 8px;
+}
+
+/* Listas de hobbies, canciones, mascotas y metas */
+ul, ol {
+    max-width: 700px;
+    margin: 20px auto;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    list-style-position: inside;
+    animation: fadeInUp 1s ease-out;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+/* Estilo para iframes de Spotify */
+iframe {
+    display: block;
+    margin: 0 auto 40px;
+    border: none;
+    max-width: 700px;
+    animation: fadeInUp 1s ease-out;
+}
+
+/* Animaciones */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    iframe {
+        height: 200px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .tarjeta-acercademi, ul, ol {
+        margin: 10px;
+    }
 }
